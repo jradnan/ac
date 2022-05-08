@@ -17,18 +17,28 @@ const RegisterPage = () => {
   const [Success, setSuccess] = useState()
   const [border, setBorder] = useState(false)
   const [show, setShow] = useState(false);
-  const {CreateWithEmailPassword} = useFirebase()
+  const { CreateWithEmailPassword } = useFirebase()
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const auth = getAuth(app)
   // Collect all Data From Feild 
- 
+
   // Collect all Data From Feild 
   const Register = (e) => {
     CreateWithEmailPassword(email, password, name)
     console.log(email, password, name)
   }
+  const emailVarify = () => {
+    const user = auth.currentUser;
+    const newPassword = getASecureRandomPassword();
 
+    updatePassword(user, newPassword).then(() => {
+      // Update successful.
+    }).catch((error) => {
+      // An error ocurred
+      // ...
+    });
+  }
   return (
     <div>
       <div>
@@ -43,13 +53,13 @@ const RegisterPage = () => {
 
                 <div className={border ? "border-danger bg-danger text-white wrap-input100 validate-input m-b-23" : "wrap-input100 validate-input m-b-23"} data-validate="Username is reauired">
                   <span className="label-input100">Name</span>
-                  <input onBlur={(e)=> setName(e.target.value)} required autoComplete='off' className="input100" type="text" name="name" placeholder="Type your Name" />
+                  <input onBlur={(e) => setName(e.target.value)} required autoComplete='off' className="input100" type="text" name="name" placeholder="Type your Name" />
                   <span className="focus-input100" data-symbol="" />
                 </div>
 
                 <div className={border ? "border-danger bg-danger text-white wrap-input100 validate-input m-b-23" : "wrap-input100 validate-input m-b-23"} data-validate="Username is reauired">
                   <span className="label-input100">Email</span>
-                  <input onBlur={(e)=> setEmail(e.target.value)} required autoComplete='off' className="input100" type="email" name="email" placeholder="Type your Email" />
+                  <input onBlur={(e) => setEmail(e.target.value)} required autoComplete='off' className="input100" type="email" name="email" placeholder="Type your Email" />
                   <span className="focus-input100" data-symbol="" />
                 </div>
                 <div className="wrap-input100 validate-input" data-validate="Password is required">

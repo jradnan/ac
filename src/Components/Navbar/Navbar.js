@@ -53,7 +53,9 @@ const Navbar = () => {
                                         :
                                         <Link className='btn-special1' to='/login'>Login</Link>
                                 }
-                                <Link className='btn-special2 ms-2' to='/Profile'>Admin</Link>
+                                {
+                                    user.email&& <Link className='btn-special2 ms-2' to='/Profile'>Admin</Link>
+                                }
                             </li>
                         </ul>
                     </div>

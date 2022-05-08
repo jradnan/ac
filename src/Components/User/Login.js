@@ -1,13 +1,14 @@
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { toast } from 'react-toastify'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import auth from '../firebase.init'
 import './Style.css'
 import Google from './user/Google'
 const Login = () => {
   const [error , setError] = useState()
-
+  const location = useLocation()
+  const fromLoca = location.state?.from?.pathname
+  const navigate = useNavigate()
   const sigin = (e) => {
     e.preventDefault()
 
@@ -18,9 +19,8 @@ const Login = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        const notify = () => toast("Loged In");
-        notify()
-        console.log(user)
+       
+        navigate(fromLoca)
       })
       .catch((error) => {
         const errorCode = error.code;

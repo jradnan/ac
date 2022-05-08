@@ -1,13 +1,19 @@
 import React from 'react'
 import {signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import auth from '../../firebase.init';
+import { useLocation, useNavigate } from 'react-router-dom';
 const Google = () => {
+    const location = useLocation()
+    const fromLoca = location.state?.from?.pathname
+    const navigate = useNavigate()
     const logingoogle =()=>{
+        
         const provider = new GoogleAuthProvider();
         signInWithPopup(auth, provider)
           .then((result) => {
-           
-
+           if (fromLoca) {
+            navigate(fromLoca)
+           }
           }).catch((error) => {
            
             const errorCode = error.code;
