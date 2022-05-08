@@ -15,6 +15,8 @@ const ManageInventory = () => {
                 setQuantity(json.quantity)
                 setInventory(json)})
     }, [])
+
+    
     const update =(e)=>{
         e.preventDefault()
         const url = `http://localhost:5000/product/${id}`;

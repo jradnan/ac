@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Modal } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import useUser from '../../Hook/useUser';
 import './Inventory.css'
@@ -35,7 +36,7 @@ const Inventory = () => {
     const name = e.target.name.value
     const image = e.target.image.value
     const price = e.target.price.value
-    const quantity = e.target.quantity.value
+    const quantity = parseInt(e.target.quantity.value)
     const description = e.target.description.value
     const email = user.email
     const suplier = user.displayName
@@ -57,6 +58,7 @@ const Inventory = () => {
         setProduct(newproducts)
         e.target.reset();
       })
+    
   }
 
   return (
@@ -78,8 +80,13 @@ const Inventory = () => {
             <p>Suplier : {prod.suplier}</p>
             <p>Price : {prod.price}</p>
             <p>Quantity : {prod.quantity}</p>
-            <p>{prod.description.slice(0, 100)} </p>
+            <p>{prod.description.length > 100 ? prod.description.slice(0 , 100)+ "..." : prod.description } </p>
+           <div className='d-flex justify-content-between'>
+           
+            <Link to={`/inventory/${prod._id}`} className="btn btn-success">Update</Link>
+
             <button onClick={() => delet(prod._id)} className="btn-special2">Delete</button>
+           </div>
           </div>
           )
         }
@@ -91,13 +98,13 @@ const Inventory = () => {
         </Modal.Header>
         <Modal.Body>
           <form onSubmit={AddProduct} className='add-product-db'>
-            <input name='image' type="text" placeholder='Product Image Url .' required />
-            <input name='name' type="text" placeholder='Product Name' required />
-            <input name='price' type="number" placeholder='Product Price' required />
-            <input name='quantity' type="number" placeholder='Product Quantity' required />
-            <textarea name='description' type="number" placeholder='Product Description' required />
-            <input className='mt-3' type="text" value={user.email} readOnly />
-            <input className='mt-3' type="text" value={user.displayName} readOnly />
+            <input name='image' type="text" placeholder='Product Image Url .' required autoComplete='off'/>
+            <input name='name' type="text" placeholder='Product Name' required autoComplete='off'/>
+            <input name='price' type="number" placeholder='Product Price' required autoComplete='off'/>
+            <input name='quantity' type="number" placeholder='Product Quantity' required autoComplete='off'/>
+            <textarea name='description' type="number" placeholder='Product Description' required autoComplete='off'/>
+            <input className='mt-3' type="text" value={user.email} readOnly autoComplete='off'/>
+            <input className='mt-3' type="text" value={user.displayName} readOnly autoComplete='off'/>
             <Modal.Footer>
               <Button type='submit' variant="primary" >
                 Add Product
