@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import auth from '../firebase.init'
 import './Style.css'
+import Google from './user/Google'
 const Login = () => {
   const [error , setError] = useState()
 
@@ -51,7 +52,9 @@ const Login = () => {
         <h5 className='d-flex align-items-center justify-content-around mt-4'>
           Not a mamber
           <Link className='reg-button' to='/register'>Register</Link></h5>
+         <Google />
       </div>
+      
     </div>
   )
 }

@@ -2,14 +2,23 @@ import React, { useEffect, useState } from 'react'
 import Header from './Header'
 import Card from '../Inventory/Card'
 import About from '../About/About';
+import Loading from '../loading/Loading';
 const Home = () => {
+
+  const [loading, setloading] = useState(true);
   const [product, setProduct] = useState([]);
   useEffect(() => {
     fetch('http://localhost:5000/product')
       .then(res => res.json())
-      .then(json => setProduct(json))
+      .then(json => {setProduct(json)
+        setloading(false)
+      })
+      
   }, []);
-  
+  if (loading) {
+    return <Loading />
+  }
+
   return (
     <main className='home'>
       <Header />

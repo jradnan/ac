@@ -14,9 +14,24 @@ import Footer from './Components/Footer/Footer';
 import About from './Components/About/About';
 import Blogs from './Components/Blogs/Blogs';
 import Admin from './Components/AdminPage/Admin';
+import Loading from './Components/loading/Loading';
+import { useState } from 'react';
+
+
 function App() {
   const user = useUser()
-  console.log(user)
+
+  const [loading, setloading] = useState(true);
+  const loadingHandler = () => {
+    setTimeout(() => {
+      setloading(false)
+    }, 2000)
+  }
+  loadingHandler()
+  if (loading) {
+    return <Loading />
+  }
+
   return (
     <div className="App">
       <Navbar />
@@ -33,13 +48,13 @@ function App() {
           <ManageInventory />
         </RequireAuth>
         } />
-      <Route path='/about' element={<div className='page-about'>
-        <About />
-      </div>}/>
-      <Route path='/blogs' element={<Blogs />}/>
-      <Route path='/profile' element={<RequireAuth>
+        <Route path='/about' element={<div className='page-about'>
+          <About />
+        </div>} />
+        <Route path='/blogs' element={<Blogs />} />
+        <Route path='/profile' element={<RequireAuth>
           <Admin />
-        </RequireAuth>}/>
+        </RequireAuth>} />
       </Routes>
       <ToastContainer />
       <Footer />

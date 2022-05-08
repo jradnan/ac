@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { Area, AreaChart, CartesianGrid, Tooltip, XAxis, YAxis } from 'recharts'
 
 const Admin = () => {
-    const [data , setDate] = useState([])
+    const [data, setDate] = useState([])
     useEffect(() => {
         fetch('http://localhost:5000/product/')
-        .then(res => res.json())
-        .then(json => setDate(json))
+            .then(res => res.json())
+            .then(json => setDate(json))
     }, [])
     console.log(data)
     return (

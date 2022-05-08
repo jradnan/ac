@@ -87,12 +87,12 @@
     height: auto;
 }
 
-a{
+a {
     text-decoration: none;
     border: none;
 }
 
-footer{
+footer {
     height: 50px;
     background-color: #00235A;
     width: 100%;
@@ -101,19 +101,44 @@ footer{
     align-items: center;
     margin-top: 70px;
 }
-footer p{
+
+footer p {
     color: white;
     margin-bottom: 0;
 }
-.page-about{
-    height:70vh;
+
+.page-about {
+    height: 70vh;
 }
-ol li{
+
+ol li {
     margin-top: 10px;
 }
 
-.recharts-wrapper{
+.recharts-wrapper {
     width: 100% !important;
     height: 700px !important;
     margin-top: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+    .recharts-wrapper {
+        width: 100% !important;
+        height: 700px !important;
+        margin-top: 50px;
+    }
+}
+
+.loading-page{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #001536;
+    color: #fff;
+}
+.spinner-border{
+    width: 80px !important;
+    height: 80px !important;
 }

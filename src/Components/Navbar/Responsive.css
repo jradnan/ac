@@ -74,10 +74,7 @@ nav .right-side{
 .dont-show{
   margin-left: -250%;
 }
-.navbar ul li:hover{
-  background-color: #007527;
-  
-}
+
 .navbar ul li a:hover{
   color: white;
   

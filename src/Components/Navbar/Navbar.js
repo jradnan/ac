@@ -1,7 +1,7 @@
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import './Navbar.css'
 import './Responsive.css'
 import useUser from '../../Hook/useUser'
@@ -9,6 +9,7 @@ import auth from '../firebase.init'
 import { signOut } from 'firebase/auth'
 const navUrls = ["home", "about", "inventory", "blogs",]
 const Navbar = () => {
+    const navigate = useNavigate()
     const [navbar, setNavbar] = useState(false)
     const navHandler = () => {
         if (navbar) {
@@ -22,6 +23,7 @@ const Navbar = () => {
     const logout = () => {
         
         signOut(auth).then(() => {
+            navigate('/')
             window.location.reload()
         }).catch((error) => {
             // An error happened.

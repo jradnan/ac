@@ -3,15 +3,19 @@ import { Button, Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import useUser from '../../Hook/useUser';
+import Loading from '../loading/Loading';
 import './Inventory.css'
 const Inventory = () => {
+  const [loading, setloading] = useState(true);
   const [product, setProduct] = useState([]);
   const handleClose = () => setShow(false);
   const [show, setShow] = useState(false);
   useEffect(() => {
     fetch('http://localhost:5000/product')
       .then(res => res.json())
-      .then(json => setProduct(json))
+      .then(json => {setProduct(json)
+        setloading(false)
+      })
   }, []);
 
   const delet = (id) => {
@@ -40,7 +44,7 @@ const Inventory = () => {
     const description = e.target.description.value
     const email = user.email
     const suplier = user.displayName
-
+    
     const newproduct = { name, image, price, quantity, description, email , suplier }
     fetch("http://localhost:5000/product",
       {
@@ -60,7 +64,9 @@ const Inventory = () => {
       })
     
   }
-
+  if (loading) {
+    return <Loading />
+  }
   return (
     <div className='container mt-5'>
 
