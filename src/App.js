@@ -10,6 +10,8 @@ import useUser from './Hook/useUser';
 import Inventory from './Components/Inventory/Inventory';
 import RequireAuth from './Components/RequireAuth'
 import ManageInventory from './Components/Inventory/ManageInventory';
+import Footer from './Components/Footer/Footer';
+import About from './Components/About/About';
 function App() {
   const user = useUser()
   console.log(user)
@@ -29,9 +31,12 @@ function App() {
           <ManageInventory />
         </RequireAuth>
         } />
-
+      <Route path='/about' element={<div className='page-about'>
+        <About />
+      </div>}/>
       </Routes>
       <ToastContainer />
+      <Footer />
     </div>
   );
 }

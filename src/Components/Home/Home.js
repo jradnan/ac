@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Header from './Header'
 import Card from '../Inventory/Card'
+import About from '../About/About';
 const Home = () => {
   const [product, setProduct] = useState([]);
   useEffect(() => {
@@ -12,6 +13,7 @@ const Home = () => {
   return (
     <main className='home'>
       <Header />
+      <About />
       <div className="container">
         <h1 className='text-center py-5'>Products</h1>
         <div className="grid-3-col">

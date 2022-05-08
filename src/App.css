@@ -91,3 +91,20 @@ a{
     text-decoration: none;
     border: none;
 }
+
+footer{
+    height: 50px;
+    background-color: #00235A;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
+footer p{
+    color: white;
+    margin-bottom: 0;
+}
+.page-about{
+    height:70vh;
+}
