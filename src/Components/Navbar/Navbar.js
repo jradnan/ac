@@ -29,6 +29,7 @@ const Navbar = () => {
             // An error happened.
         });
     }
+  
     return (
         <>
 

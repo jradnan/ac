@@ -20,6 +20,10 @@ nav {
     font-size: 40px;
     font-weight: 600;
 }
+.logo a{
+    text-decoration: none !important;
+    border: none;
+}
 .logo svg {
     font-size: 40px;
     cursor: pointer;
