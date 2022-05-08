@@ -24,6 +24,7 @@ const Home = () => {
               suplier={prod.suplier}
               quantity={prod.quantity}
               price={prod.price}
+              to={prod._id}
             />
 
 

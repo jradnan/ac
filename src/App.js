@@ -9,22 +9,27 @@ import { ToastContainer } from 'react-toastify';
 import useUser from './Hook/useUser';
 import Inventory from './Components/Inventory/Inventory';
 import RequireAuth from './Components/RequireAuth'
+import ManageInventory from './Components/Inventory/ManageInventory';
 function App() {
-  const user =useUser()
+  const user = useUser()
   console.log(user)
   return (
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path='/' element={<Home />}/>
-        <Route path='/home' element={<Home />}/>
-        <Route path='/login' element={<Login />}/>
-        <Route path='/register' element={<Register />}/>
+        <Route path='/' element={<Home />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
         <Route path='/inventory' element={<RequireAuth>
           <Inventory />
         </RequireAuth>
-      }/>
-        
+        } />
+        <Route path='/inventory/:id' element={<RequireAuth>
+          <ManageInventory />
+        </RequireAuth>
+        } />
+
       </Routes>
       <ToastContainer />
     </div>

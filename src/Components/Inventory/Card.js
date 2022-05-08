@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 const Card = (props) => {
   return (
     <div className='inventory-card'>   
@@ -7,11 +7,12 @@ const Card = (props) => {
       backgroundImage: `url(${props.image})` 
     }} className='inv-image'></div>
     {/* image end  */}
-    <p>Name : {props.name}</p>
+    <p>Name : {props.name.slice(0 , 20)}</p>
     <p>Suplier : {props.suplier}</p>
     <p>Price : {props.price}</p>
     <p>Quantity : {props.quantity}</p>
-    <p>{props.desc.slice(0 , 110)} </p>
+    <p>{props.desc.length ==} </p>
+   <Link to={`/inventory/${props.to}`} className="btn-special2">Update</Link>
     </div>
   )
 }
