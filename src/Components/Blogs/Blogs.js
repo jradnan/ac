@@ -3,6 +3,7 @@ import './Blogs.css'
 const Blogs = () => {
     return (
         <div className='container mt-5'>
+            
             <div className="">
                 <div className='mt-4'>
                     <img className='img-fluid' src="https://cdn.educba.com/academy/wp-content/uploads/2018/07/Java-Script-vs-Node-JS-1.png" alt="" />
