@@ -13,6 +13,7 @@ import ManageInventory from './Components/Inventory/ManageInventory';
 import Footer from './Components/Footer/Footer';
 import About from './Components/About/About';
 import Blogs from './Components/Blogs/Blogs';
+import Admin from './Components/AdminPage/Admin';
 function App() {
   const user = useUser()
   console.log(user)
@@ -36,6 +37,9 @@ function App() {
         <About />
       </div>}/>
       <Route path='/blogs' element={<Blogs />}/>
+      <Route path='/profile' element={<RequireAuth>
+          <Admin />
+        </RequireAuth>}/>
       </Routes>
       <ToastContainer />
       <Footer />

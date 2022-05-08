@@ -111,3 +111,9 @@ footer p{
 ol li{
     margin-top: 10px;
 }
+
+.recharts-wrapper{
+    width: 100% !important;
+    height: 700px !important;
+    margin-top: 50px;
+}
