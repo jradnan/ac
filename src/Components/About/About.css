@@ -1,14 +1,30 @@
-.about{
+.about {
     display: flex;
     justify-content: space-between;
 }
-.about-info{
+
+.about-info {
     display: flex;
     flex-direction: column;
     padding: 30px;
     align-items: flex-start;
     justify-content: center;
 }
-.about img{
+
+.about img {
     border-radius: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+
+
+    .about {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about img {
+        border-radius: 20px;
+        width: 100%;
+    }
 }

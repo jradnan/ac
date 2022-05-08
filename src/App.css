@@ -108,3 +108,6 @@ footer p{
 .page-about{
     height:70vh;
 }
+ol li{
+    margin-top: 10px;
+}
