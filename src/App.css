@@ -131,7 +131,6 @@ ol li {
     justify-content: center;
 }
 .not-found img{
-    width: ;
     height: 100%;
 }
 .not-found a{
@@ -151,10 +150,13 @@ ol li {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #001536;
+    background-color: #000000;
     color: #fff;
 }
 .spinner-border{
     width: 80px !important;
     height: 80px !important;
+}
+.loading-page img{
+ 
 }

@@ -28,7 +28,7 @@ function App() {
       setloading(false)
     }, 2000)
   }
-  loadingHandler()
+  // loadingHandler()
   if (loading) {
     return <Loading />
   }
