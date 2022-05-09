@@ -20,8 +20,7 @@ const Login = () => {
       .then((userCredential) => {
         const user = userCredential.user;
         sentJwy(user)
-        navigate(fromLoca)
-       
+        navigate(fromLoca) 
       })
       .catch((error) => {
         const errorCode = error.code;

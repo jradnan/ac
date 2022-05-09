@@ -17,6 +17,7 @@ import Admin from './Components/AdminPage/Admin';
 import Loading from './Components/loading/Loading';
 import { useState } from 'react';
 import Contact from './Components/Contact/Contact'
+import Notfound404 from './Components/Notfound404';
 
 function App() {
   const user = useUser()
@@ -37,6 +38,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='*' element={<Notfound404 />} />
         <Route path='/home' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
