@@ -9,7 +9,7 @@ const ManageInventory = () => {
     const [inventory, setInventory] = useState({})
     const [quant , setQuantity] = useState(0)
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${id}`)
+        fetch(`https://peaceful-waters-00676.herokuapp.com/product/${id}`)
             .then(res => res.json())
             .then(json => {
                 setQuantity(json.quantity)
@@ -19,7 +19,7 @@ const ManageInventory = () => {
     
     const update =(e)=>{
         e.preventDefault()
-        const url = `http://localhost:5000/product/${id}`;
+        const url = `https://peaceful-waters-00676.herokuapp.com/product/${id}`;
         const quant = e.target.quantity.value
         const quantity = parseInt(quant) + inventory.quantity
         const formData = {quantity}
@@ -37,7 +37,7 @@ const ManageInventory = () => {
         
       }
       const deliver =(e)=>{
-        const url = `http://localhost:5000/product/${id}`;
+        const url = `https://peaceful-waters-00676.herokuapp.com/product/${id}`;
         const quantity = quant - 1
         const formData = {quantity}
         

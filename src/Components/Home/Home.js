@@ -3,12 +3,13 @@ import Header from './Header'
 import Card from '../Inventory/Card'
 import About from '../About/About';
 import Loading from '../loading/Loading';
+import Contact from '../Contact/Contact';
 const Home = () => {
 
   const [loading, setloading] = useState(true);
   const [product, setProduct] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:5000/product')
+    fetch('https://peaceful-waters-00676.herokuapp.com/product')
       .then(res => res.json())
       .then(json => {setProduct(json)
         setloading(false)
@@ -43,6 +44,7 @@ const Home = () => {
           }
         </div>
       </div>
+      <Contact />
     </main>
   )
 }

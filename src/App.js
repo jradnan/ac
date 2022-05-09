@@ -16,7 +16,7 @@ import Blogs from './Components/Blogs/Blogs';
 import Admin from './Components/AdminPage/Admin';
 import Loading from './Components/loading/Loading';
 import { useState } from 'react';
-
+import Contact from './Components/Contact/Contact'
 
 function App() {
   const user = useUser()
@@ -55,8 +55,10 @@ function App() {
         <Route path='/profile' element={<RequireAuth>
           <Admin />
         </RequireAuth>} />
+        <Route path='/contact' element={<Contact />}/>
       </Routes>
       <ToastContainer />
+      
       <Footer />
     </div>
   );

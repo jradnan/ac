@@ -26,3 +26,11 @@
 .reg-button:hover{
 color: #C8242F;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .login-page{
+        width: 100%;
+        margin: 0 auto;
+    }
+}

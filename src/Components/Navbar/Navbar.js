@@ -7,7 +7,7 @@ import './Responsive.css'
 import useUser from '../../Hook/useUser'
 import auth from '../firebase.init'
 import { signOut } from 'firebase/auth'
-const navUrls = ["home", "about", "inventory", "blogs",]
+const navUrls = ["home", "about", "inventory", "blogs","contact"]
 const Navbar = () => {
     const navigate = useNavigate()
     const [navbar, setNavbar] = useState(false)

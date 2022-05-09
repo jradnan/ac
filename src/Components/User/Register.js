@@ -22,7 +22,8 @@ const Register = () => {
         setError('')
         DisplayName(name)
         verifyEmail()
-        navigate(fromLoca)
+       
+
       })
       .catch((error) => {
         const errorCode = error.code;

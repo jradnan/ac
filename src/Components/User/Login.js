@@ -15,12 +15,13 @@ const Login = () => {
     const email = e.target.email.value
     const password = e.target.password.value
 
-
+    
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-       
+        sentJwy(user)
         navigate(fromLoca)
+       
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -28,7 +29,24 @@ const Login = () => {
       });
     
   }
-
+  function sentJwy(user) {
+    fetch("http://localhost:5100/login",
+      {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify(user)
+      })
+      .then(res => res.json)
+      .then(data =>{
+        if(data){
+            localStorage.setItem('accessToken', data);
+        }
+        console.log(data);
+    })
+  }
   return (
     <div className='container'>
       <div className="login-page">

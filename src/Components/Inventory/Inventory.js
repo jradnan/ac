@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { toast } from 'react-toastify';
+
 import useUser from '../../Hook/useUser';
 import Loading from '../loading/Loading';
 import './Inventory.css'
@@ -11,7 +11,7 @@ const Inventory = () => {
   const handleClose = () => setShow(false);
   const [show, setShow] = useState(false);
   useEffect(() => {
-    fetch('http://localhost:5000/product')
+    fetch('https://peaceful-waters-00676.herokuapp.com/product')
       .then(res => res.json())
       .then(json => {setProduct(json)
         setloading(false)
@@ -22,7 +22,7 @@ const Inventory = () => {
     const confirmD = window.confirm('Are You Sure')
     if (confirmD) {
 
-      fetch(`http://localhost:5000/product/${id}`, {
+      fetch(`https://peaceful-waters-00676.herokuapp.com/product/${id}`, {
         method: 'DELETE',
       })
         .then(res => res.json())
@@ -46,7 +46,7 @@ const Inventory = () => {
     const suplier = user.displayName
     
     const newproduct = { name, image, price, quantity, description, email , suplier }
-    fetch("http://localhost:5000/product",
+    fetch("https://peaceful-waters-00676.herokuapp.com/product",
       {
         headers: {
           'Accept': 'application/json',

@@ -4,7 +4,7 @@ import { Area, AreaChart, CartesianGrid, Tooltip, XAxis, YAxis } from 'recharts'
 const Admin = () => {
     const [data, setDate] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/product/')
+        fetch('https://peaceful-waters-00676.herokuapp.com/product/')
             .then(res => res.json())
             .then(json => setDate(json))
     }, [])
