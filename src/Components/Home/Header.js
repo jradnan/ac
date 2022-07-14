@@ -1,4 +1,3 @@
-import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -6,9 +5,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import smartWatch from '../Images/Smart-Watch.jpg'
 import phone from '../Images/phone.jpg'
-import lcd from './lcd.webp'
+
 
 
 // import required modules
@@ -35,20 +33,18 @@ export default function Header() {
             <img className="img-fluid" src={phone} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-            <img src="https://i.pinimg.com/originals/bd/98/35/bd983558d61361e66f41c5b9c622ea99.jpg" alt="" />
+            <img src="https://dlcdnwebimgs.asus.com/files/media/fb693c7c-211d-4c70-a6ba-6a14aae9fac6/v2/images/large/g_kv.png" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-            <img src="https://www.photoshopvideotutorial.com/freepsdmock/wp-content/uploads/2019/05/Free-Unique-Mouse-Pad-Mockup-scaled.jpg" alt="" />
+            <img src="https://www.asus.com/WebsitesBanner/global/banners/hdf4csxssyg7gjn3/hdf4csxssyg7gjn3-0_0_desktop_1X.jpg?webp" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-            <img src={smartWatch} alt="" />
+            <img className="w-50 bg-white" src="https://www.apple.com/v/watch/ax/images/overview/se/tile-watch-se__knji2d25x8qe_large.jpg" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-            <img src={lcd} alt="" />
+            <img className="w-50" src="https://images.samsung.com/is/image/samsung/p6pim/bd/qa55q70aarser/gallery/bd-qled-q70a-qa55q70aarser-507696328?$684_547_PNG$" alt="" />
         </SwiperSlide>
-        <SwiperSlide>
-            <img className="w-50" src={'https://cdn.dribbble.com/users/3695363/screenshots/7059682/gaming_mouse_mockup_4x.jpg'} alt="" />
-        </SwiperSlide>
+       
       </Swiper>
     </>
   );

@@ -20,18 +20,18 @@ import Contact from './Components/Contact/Contact'
 import Notfound404 from './Components/Notfound404';
 
 function App() {
-  const user = useUser()
+  // const user = useUser()
 
-  const [loading, setloading] = useState(true);
-  const loadingHandler = () => {
-    setTimeout(() => {
-      setloading(false)
-    }, 2000)
-  }
-  // loadingHandler()
-  if (loading) {
-    return <Loading />
-  }
+  // const [loading, setloading] = useState(true);
+  // const loadingHandler = () => {
+  //   setTimeout(() => {
+  //     setloading(false)
+  //   }, 2000)
+  // }
+  // // loadingHandler()
+  // if (loading) {
+  //   return <Loading />
+  // }
 
   return (
     <div className="App">

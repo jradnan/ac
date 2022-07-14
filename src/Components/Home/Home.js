@@ -16,9 +16,9 @@ const Home = () => {
       })
       
   }, []);
-  if (loading) {
-    return <Loading />
-  }
+  // if (loading) {
+  //   return <Loading />
+  // }
 
   return (
     <main className='home'>
